@@ -1,4 +1,4 @@
-import { AudioLines, Camera, Mail, MapPin } from 'lucide-react'
+import { AudioLines, Camera, Mail, MapPin, Phone } from 'lucide-react'
 
 import { BrandMark } from '@/components/brand'
 import { NewsletterSignup } from '@/components/newsletter-signup'
@@ -73,6 +73,15 @@ export function PublicFooter() {
                 />
                 <span>The Kiln & Roasting House: 88 Franklin Ave, Brooklyn</span>
               </li>
+              <li className="flex items-start gap-2.5">
+                <Phone
+                  className="mt-0.5 h-4 w-4 shrink-0 text-secondary-container"
+                  aria-hidden="true"
+                />
+                <a className="transition-colors hover:text-surface-bright" href="tel:+94760041594">
+                  +94 760041594
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -141,6 +150,9 @@ export function PublicFooter() {
         </div>
         <p className="mt-4 text-center font-body-sm text-[11px] text-footer-muted/70 md:text-left">
           Prototype only · menu prices are sample mockup values, not verified pricing.
+        </p>
+        <p className="mt-2 text-center font-body-sm text-[11px] text-footer-muted/70 md:text-right">
+          Designed and Developed By: Neirah Tech
         </p>
       </div>
     </footer>
