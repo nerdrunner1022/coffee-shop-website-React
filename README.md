@@ -28,8 +28,11 @@ npm run preview
 - `/menu` — full public menu.
 - `/admin` — admin overview; navigate to `/admin/menu`, `/admin/offers`, `/admin/catering`, or
   `/admin/newsletter` for the other prototype screens.
+- `/admin/login` — demo admin sign-in, also accessible from the account icon in the public header.
 
-The admin prototype has no authentication or backend.
+The admin sign-in is a client-side prototype gate. Use `test@mail.com` / `demo123`; sign out with
+the admin header control. This gate does not provide security and must not be used to protect
+production data; there is no authentication backend.
 
 ## Tooling notes
 

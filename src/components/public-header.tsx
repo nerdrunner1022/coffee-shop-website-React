@@ -1,4 +1,4 @@
-import { Menu, Search } from 'lucide-react'
+import { Menu, Search, UserRound } from 'lucide-react'
 import { useLayoutEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -145,6 +145,17 @@ export function PublicHeader({ heroEntrance = false }: { heroEntrance?: boolean 
           className="public-header__reservation"
         >
           Pull Up a Chair
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          size="icon"
+          className="public-header__account"
+          title="Admin sign in"
+        >
+          <Link to="/admin/login" aria-label="Admin sign in">
+            <UserRound className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </Button>
         <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
           <DialogTrigger asChild>

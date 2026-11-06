@@ -1,17 +1,13 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { Bell, Menu, MapPin, Plus, RefreshCw } from 'lucide-react'
+import { Bell, LogOut, Menu, MapPin, Plus, RefreshCw } from 'lucide-react'
 import { useState } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 import { AdminSidebar } from '@/components/admin/admin-sidebar'
 import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 import { useToast } from '@/components/ui/toast'
+import { endDemoAdminSession } from '@/lib/demo-admin-auth'
 
 const pageTitles: Record<string, string> = {
   '/admin': 'Overview & Sales Pulse',
@@ -25,6 +21,7 @@ export function AdminLayout() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { toast } = useToast()
   const location = useLocation()
+  const navigate = useNavigate()
   const queryClient = useQueryClient()
 
   const title = pageTitles[location.pathname] ?? 'Atelier Portal'
@@ -144,6 +141,20 @@ export function AdminLayout() {
                 JV
               </span>
             </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              aria-label="Sign out of demo admin"
+              title="Sign out"
+              onClick={() => {
+                endDemoAdminSession()
+                void navigate('/')
+              }}
+              className="rounded-full"
+            >
+              <LogOut className="h-4 w-4" aria-hidden="true" />
+            </Button>
           </div>
         </header>
 

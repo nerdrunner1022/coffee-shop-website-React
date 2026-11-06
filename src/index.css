@@ -422,6 +422,7 @@
 }
 
 .public-header__search,
+.public-header__account,
 .public-header__toggle {
   border-radius: 50% !important;
 }
